@@ -3,7 +3,7 @@
 @section('title', 'comics')
 
 @section('main-content')
-    <div class="container">
+    <div class="container mt-5">
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -24,7 +24,7 @@
                     <td>{{ $comic->series }}</td>
                     <td>{{ $comic->type }}</td>
                     <td>
-                        <a class="btn btn-primary" href="route('comics.show', $comic->id)">show</a>
+                        <a class="btn btn-primary" href="{{ route('comics.show', $comic->id) }}">show</a>
                     </td>
                 </tr>
                 @empty
