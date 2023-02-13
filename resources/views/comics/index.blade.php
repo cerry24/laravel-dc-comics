@@ -12,6 +12,7 @@
                     <th scope="col">price</th>
                     <th scope="col">series</th>
                     <th scope="col">type</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -22,6 +23,9 @@
                     <td>{{ $comic->price }}</td>
                     <td>{{ $comic->series }}</td>
                     <td>{{ $comic->type }}</td>
+                    <td>
+                        <a class="btn btn-primary" href="route('comics.show', $comic->id)">show</a>
+                    </td>
                 </tr>
                 @empty
                     <p>There are no comics to be shown</p>
