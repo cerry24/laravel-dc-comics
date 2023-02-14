@@ -39,14 +39,19 @@ class ComicsController extends Controller
     {
         $data = $request->all();
 
+        // $newComic = new Comic();
+        // $newComic->title = $data['title'];
+        // $newComic->description = $data['description'];
+        // $newComic->cover = $data['cover'];
+        // $newComic->price = $data['price'];
+        // $newComic->series = $data['series'];
+        // $newComic->sale_date = $data['sale_date'];
+        // $newComic->type = $data['type'];
+        // $newComic->save();
+
+        // create another way to do it using fillable properties
         $newComic = new Comic();
-        $newComic->title = $data['title'];
-        $newComic->description = $data['description'];
-        $newComic->cover = $data['cover'];
-        $newComic->price = $data['price'];
-        $newComic->series = $data['series'];
-        $newComic->sale_date = $data['sale_date'];
-        $newComic->type = $data['type'];
+        $newComic->fill($data);
         $newComic->save();
 
         return redirect()->route('comics.show', $newComic->id);
