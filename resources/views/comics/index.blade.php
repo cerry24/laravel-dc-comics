@@ -12,7 +12,7 @@
                     <th scope="col">price</th>
                     <th scope="col">series</th>
                     <th scope="col">type</th>
-                    <th scope="col"></th>
+                    <th scope="col"><a class="btn btn-success" href="{{ route('comics.create') }}">add new comic</a></th>
                 </tr>
             </thead>
             <tbody>
