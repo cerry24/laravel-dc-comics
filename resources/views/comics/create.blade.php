@@ -5,7 +5,9 @@
 @section('main-content')
     <div class="container mt-5">
         <div class="col-10">
-            <form>
+            <form action="{{ route('comics.store') }}" method="POST">
+                @csrf
+
                 <div class="mb-3">
                     <label for="input-title" class="form-label">Title</label>
                     <input type="text" class="form-control" name="title" id="input-title">
@@ -20,7 +22,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="input-price" class="form-label">Price</label>
-                    <input type="number" class="form-control" name="price" id="input-price">
+                    <input type="text" class="form-control" name="price" id="input-price">
                 </div>
                 <div class="mb-3">
                     <label for="input-series" class="form-label">Series</label>
