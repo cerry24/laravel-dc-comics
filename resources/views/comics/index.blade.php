@@ -26,7 +26,7 @@
                     <td>
                         <a class="btn btn-primary" href="{{ route('comics.show', $comic->id) }}">show</a>
                         <a class="btn btn-warning" href="{{ route('comics.edit', $comic->id) }}">edit</a>
-                        <form action="{{ route('comics.destroy', $comic->id) }}" method="POST" class="d-inline-block">
+                        <form action="{{ route('comics.destroy', $comic->id) }}" method="POST" class="d-inline-block deleter" data-element-name="{{ $comic->title }}">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">delete</button>
@@ -39,4 +39,8 @@
             </tbody>
         </table>
     </div>
+@endsection
+
+@section('scripts')
+    @vite('resources/js/deleteConfermation.js')
 @endsection
