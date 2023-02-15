@@ -5,8 +5,9 @@
 @section('main-content')
     <div class="container mt-5">
         <div class="col-10">
-            <form action="" method="POST">
+            <form action="{{ route('comics.update', $comic->id) }}" method="POST">
                 @csrf
+                @method('PUT')
 
                 <div class="mb-3">
                     <label for="input-title" class="form-label">Title</label>
