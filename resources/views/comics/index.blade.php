@@ -26,6 +26,11 @@
                     <td>
                         <a class="btn btn-primary" href="{{ route('comics.show', $comic->id) }}">show</a>
                         <a class="btn btn-warning" href="{{ route('comics.edit', $comic->id) }}">edit</a>
+                        <form action="{{ route('comics.destroy', $comic->id) }}" method="POST" class="d-inline-block">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">delete</button>
+                        </form>
                     </td>
                 </tr>
                 @empty
