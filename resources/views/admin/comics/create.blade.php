@@ -5,7 +5,7 @@
 @section('main-content')
     <div class="container mt-5">
         <div class="col-10">
-            <form action="{{ route('comics.store') }}" method="POST">
+            <form action="{{ route('admin.comics.store') }}" method="POST">
                 @csrf
                 @if ($errors->any())
                     <div class="alert alert-warning">

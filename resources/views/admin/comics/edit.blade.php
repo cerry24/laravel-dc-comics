@@ -5,7 +5,7 @@
 @section('main-content')
     <div class="container mt-5">
         <div class="col-10">
-            <form action="{{ route('comics.update', $comic->id) }}" method="POST">
+            <form action="{{ route('admin.comics.update', $comic->id) }}" method="POST">
                 @csrf
                 @method('PUT')
                 @if ($errors->any())
