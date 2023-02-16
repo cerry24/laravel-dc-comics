@@ -38,45 +38,14 @@ class ComicsController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $request->validate([
+        $data = $request->validate([
             'title' => 'required|string|min:2|max:150|unique:comics,title',
             'description' => 'required|string|min:20',
             'cover' => 'required|active_url|min:2',
             'price' => 'required|decimal:2|min:1',
             'series' => 'required|string|min:2|max:50',
-            'sale_date' => 'required|date|',
-            'type' => 'required|string|min:2|max:50'
-        ],
-        [ //error's response
-            'title.required' => 'Devi inserire un titolo per poter creare un nuovo elemento',
-            'title.min' => 'La lunghezza del titolo deve essere compresa tra 2 e 150 caratteri',
-            'title.max' => 'La lunghezza del titolo deve essere compresa tra 2 e 150 caratteri',
-            'title.string' => 'Il titolo deve essere di tipo stringa',
-            'title.unique' => 'Il titolo non può essere identico ad un altro già esistente',
-
-            'description.required' => 'Devi inserire una descrizione per poter creare un nuovo elemento',
-            'description.min' => 'La lunghezza della descrizione deve essere di almeno 20 caratteri',
-            'description.string' => 'La descrizione deve essere di tipo stringa',
-
-            'cover.required' => 'Devi inserire un\' immagine per poter creare un nuovo elemento',
-            'cover.active_url' => 'La copertina deve essere un URL esistente',
-
-            'price.required' => 'Devi inserire un prezzo per poter creare un nuovo elemento',
-            'price.decimal' => 'Il prezzo deve essere un numero decimale con massimo 5 cifre totali e 2 decimali',
-
-            'series.required' => 'Devi inserire una serie per poter creare un nuovo elemento',
-            'series.min' => 'La lunghezza del titolo deve essere compresa tra 2 e 50 caratteri',
-            'series.max' => 'La lunghezza del titolo deve essere compresa tra 2 e 50 caratteri',
-            'series.string' => 'La serie deve essere di tipo stringa',
-
-            'sale_date' => 'Devi inserire una data di vendita per poter creare un nuovo elemento',
-            'sale_date.date' => 'LA data di vendita deve essere  di tipo data',
-
-            'type.required' => 'Devi inserire un tipo per poter creare un nuovo elemento',
-            'type.min' => 'La lunghezza del tipo deve essere compresa tra 2 e 50 caratteri',
-            'type.max' => 'La lunghezza del tipo deve essere compresa tra 2 e 50 caratteri',
-            'type.string' => 'Il tipo deve essere di tipo stringa',
+            'sale_date' => 'required|date',
+            'type' => 'required|string|min:2|max:50',
         ]);
 
         // $newComic = new Comic();
@@ -130,45 +99,14 @@ class ComicsController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        $data = $request->all();
-        $request->validate([
-            'title' => 'required|string|min:2|max:150|unique:comics,title',
+        $data = $request->validate([
+            'title' => 'required|string|min:2|max:150',
             'description' => 'required|string|min:20',
             'cover' => 'required|active_url|min:2',
             'price' => 'required|decimal:2|min:1',
             'series' => 'required|string|min:2|max:50',
             'sale_date' => 'required|date|',
-            'type' => 'required|string|min:2|max:50'
-        ],
-        [ //error's response
-            'title.required' => 'Devi inserire un titolo per poter creare un nuovo elemento',
-            'title.min' => 'La lunghezza del titolo deve essere compresa tra 2 e 150 caratteri',
-            'title.max' => 'La lunghezza del titolo deve essere compresa tra 2 e 150 caratteri',
-            'title.string' => 'Il titolo deve essere di tipo stringa',
-            'title.unique' => 'Il titolo non può essere identico ad un altro già esistente',
-
-            'description.required' => 'Devi inserire una descrizione per poter creare un nuovo elemento',
-            'description.min' => 'La lunghezza della descrizione deve essere di almeno 20 caratteri',
-            'description.string' => 'La descrizione deve essere di tipo stringa',
-
-            'cover.required' => 'Devi inserire un\' immagine per poter creare un nuovo elemento',
-            'cover.active_url' => 'La copertina deve essere un URL esistente',
-
-            'price.required' => 'Devi inserire un prezzo per poter creare un nuovo elemento',
-            'price.decimal' => 'Il prezzo deve essere un numero decimale con massimo 5 cifre totali e 2 decimali',
-
-            'series.required' => 'Devi inserire una serie per poter creare un nuovo elemento',
-            'series.min' => 'La lunghezza del titolo deve essere compresa tra 2 e 50 caratteri',
-            'series.max' => 'La lunghezza del titolo deve essere compresa tra 2 e 50 caratteri',
-            'series.string' => 'La serie deve essere di tipo stringa',
-
-            'sale_date' => 'Devi inserire una data di vendita per poter creare un nuovo elemento',
-            'sale_date.date' => 'LA data di vendita deve essere  di tipo data',
-
-            'type.required' => 'Devi inserire un tipo per poter creare un nuovo elemento',
-            'type.min' => 'La lunghezza del tipo deve essere compresa tra 2 e 50 caratteri',
-            'type.max' => 'La lunghezza del tipo deve essere compresa tra 2 e 50 caratteri',
-            'type.string' => 'Il tipo deve essere di tipo stringa',
+            'type' => 'required|string|min:2|max:50',
         ]);
         $comic->update($data);
 

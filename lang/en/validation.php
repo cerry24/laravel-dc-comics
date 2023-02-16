@@ -163,9 +163,43 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'title' => [
+            'required' => 'Devi inserire un titolo',
+            'min' => 'La lunghezza del titolo deve essere compresa tra 2 e 150 caratteri',
+            'max' => 'La lunghezza del titolo deve essere compresa tra 2 e 150 caratteri',
+            'string' => 'Il titolo deve essere di tipo stringa',
+            'unique' => 'Il titolo non può essere identico ad un altro già esistente',
         ],
+
+        'description' => [
+            'required' => 'Devi inserire una descrizione',
+            'min' => 'La lunghezza della descrizione deve essere di almeno 20 caratteri',
+            'string' => 'La descrizione deve essere di tipo stringa',
+        ],
+        'cover' => [
+            'required' => 'Devi inserire un\' immagine',
+            'active_url' => 'La copertina deve essere un URL esistente',
+        ],
+        'price' => [
+            'required' => 'Devi inserire un prezzo',
+            'decimal' => 'Il prezzo deve essere un numero decimale con massimo 5 cifre totali e 2 decimali',
+        ],
+        'series' => [
+            'required' => 'Devi inserire una serie',
+            'min' => 'La lunghezza del titolo deve essere compresa tra 2 e 50 caratteri',
+            'max' => 'La lunghezza del titolo deve essere compresa tra 2 e 50 caratteri',
+            'string' => 'La serie deve essere di tipo stringa',
+        ],
+        'sale_date' => [
+            'required' => 'Devi inserire una data di vendita',
+            'sale_date.date' => 'La data di vendita deve essere di tipo data',
+        ],
+        'type' => [
+            'required' => 'Devi inserire un tipo',
+            'min' => 'La lunghezza del tipo deve essere compresa tra 2 e 50 caratteri',
+            'max' => 'La lunghezza del tipo deve essere compresa tra 2 e 50 caratteri',
+            'string' => 'Il tipo deve essere di tipo stringa',
+        ]
     ],
 
     /*
