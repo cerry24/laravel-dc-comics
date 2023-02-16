@@ -8,6 +8,15 @@
             <form action="{{ route('comics.update', $comic->id) }}" method="POST">
                 @csrf
                 @method('PUT')
+                @if ($errors->any())
+                    <div class="alert alert-warning">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
 
                 <div class="mb-3">
                     <label for="input-title" class="form-label">Title</label>
